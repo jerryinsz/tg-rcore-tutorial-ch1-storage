@@ -1,15 +1,15 @@
 [package]
-name = "tg-rcore-tutorial-ch1-uart4"
-description = "Chapter 1 minimal kernel variant that prints via S-mode UART driver."
-version = "0.1.0-preview.1"
+name = "tg-rcore-tutorial-ch1-storage"
+description = "Chapter 1 minimal kernel variant with VirtIO block read/write in S-mode."
+version = "0.1.0-preview.2"
 edition = "2024"
 authors = ["tg-rcore contributors"]
-repository = "https://github.com/rcore-os/tg-rcore-tutorial-ch1-uart"
-homepage = "https://github.com/rcore-os/tg-rcore-tutorial-ch1-uart"
-documentation = "https://docs.rs/tg-rcore-tutorial-ch1-uart"
+repository = "https://github.com/jerryinsz/ai4ose-lab1-2026s/tree/main/tg-rcore-tutorial-ch1-storage"
+homepage = "https://github.com/jerryinsz/ai4ose-lab1-2026s/tree/main/tg-rcore-tutorial-ch1-storage"
+documentation = "https://docs.rs/tg-rcore-tutorial-ch1-storage"
 license = "GPL-3.0"
 readme = "README.md"
-keywords = ["ai", "ai4ose", "kernel", "learning", "os"]
+keywords = ["ai", "ai4ose", "kernel", "learning", "os",]
 categories = ["no-std", "embedded"]
 
 [profile.dev]
@@ -19,5 +19,7 @@ panic = "abort"
 panic = "abort"
 
 [dependencies]
-tg-sbi = { package = "tg-rcore-tutorial-sbi", path = "../tg-rcore-tutorial-sbi", version = "0.4.8", features = ["nobios"] }
-tg-uart = { package = "tg-rcore-tutorial-uart4", path = "../tg-rcore-tutorial-uart", version = "0.1.0-preview.1" }
+riscv = "0.10.1"
+spin = "0.9"
+virtio-drivers = "0.1.0"
+tg-sbi = { package = "tg-rcore-tutorial-sbi", version = "0.4.8", features = ["nobios"] }
